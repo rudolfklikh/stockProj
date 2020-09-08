@@ -1,0 +1,33 @@
+<mat-sidenav-container [hasBackdrop]='val' class="example-container">
+  <mat-sidenav #drawer class="example-sidenav" mode="over">
+    qfwqfqwfqwfqw
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <header class="header">
+      <section class="header__wrapper">
+        <nav class="navigation">
+          <img class="navigation__logo" src="./assets/img/header__logo.png" alt="logo" title="logo">
+          <ul class="navigation__list">
+            <li> Cryptos </li>
+            <li> Wallets </li>
+            <li> Send/Request </li>
+          </ul>
+        </nav>
+        <div class="menu">
+          <img (click)="drawer.toggle()" class="menu__avatar" src="./assets/img/menu__avatar.jpg" alt="avatar"
+            title="avatar">
+          <div class="menu__icon-wrapper" (click)="ToggleMenu()">
+            <div class="menu__icon" [ngClass]="{'menu__icon-active': toggleBool}"></div>
+          </div>
+        </div>
+      </section>
+      <section class="menu__mobile" *ngIf="toggleBool" [@bounceInLeft] [@flash]>
+        <ul class="menu__mobile-wrapper">
+          <li> Cryptos </li>
+          <li> Wallets </li>
+          <li> Send/Request </li>
+        </ul>
+      </section>
+    </header>
+  </mat-sidenav-content>
+</mat-sidenav-container>
